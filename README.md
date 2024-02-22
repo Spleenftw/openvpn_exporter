@@ -95,7 +95,11 @@ You can download the pre-compiled binaries from the
 
 ## LAST UPDATE
 Added a new metric called "service_openvpn" which is quite simple : if the openvpn service is up/active, equals 1. If not, equals 0.
+
+
 Added a script that restart automatically if he sees a change on the openvpn service with the help of "systemctl is-active --quiet" that returns an exit code if it's active.
+
+
 It should look like this on your http://localhost:9176/metrics page :
 ```
 # HELP service_openvpn Indicates whether the OpenVPN service is up (1) or down (0).
