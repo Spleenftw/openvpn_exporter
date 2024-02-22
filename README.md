@@ -94,7 +94,7 @@ You can download the pre-compiled binaries from the
 [releases page](https://github.com/kumina/openvpn_exporter/releases).
 
 ## LAST UPDATE
-Added a new metric called "service_openvpn" which is quite simple : if the openvpn service is up/active, equals 1. If not, equals 0.
+Added a new metric called "service_openvpn" which is quite simple : if the openvpn service is up/active, equals 1. If not, equals 0 which can be usefull if you want to monitore more than one openvpn server.
 
 
 Added a script that restart automatically if he sees a change on the openvpn service with the help of "systemctl is-active --quiet" that returns an exit code if it's active.
@@ -111,7 +111,7 @@ service_openvpn 1
 
 - Create a systemd service :
 ```
-vim  /etc/systemd/system/check_pivpn.service
+vim  /etc/systemd/system/check_openvpn.service
 ```
 ```
 [Unit]
@@ -119,7 +119,7 @@ Description=OpenVPN Status Checker
 
 [Service]
 Type=simple
-ExecStart=/path/to/check_pivpn.sh
+ExecStart=/path/to/check_openvpn.sh
 
 [Install]
 WantedBy=multi-user.target
@@ -130,6 +130,6 @@ sudo systemctl daemon-reload
 ```
 - Then simply enable it and start it :
 ```
-sudo systemctl enable check_pivpn.service
-sudo systemctl start check_pivpn.service
+sudo systemctl enable check_openvpn.service
+sudo systemctl start check_openvpn.service
 ```
