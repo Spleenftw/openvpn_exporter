@@ -99,7 +99,7 @@ Added a script that restart automatically if he sees a change on the openvpn ser
 
 ## Exemple on how to use it : 
 
-- Create a systemd service
+- Create a systemd service :
 ```
 vim  /etc/systemd/system/check_pivpn.service
 ```
@@ -114,7 +114,7 @@ ExecStart=/path/to/check_pivpn.sh
 [Install]
 WantedBy=multi-user.target
 ```
-- Reload the
+- Reload the systemd manager configuration :
 ```
 sudo systemctl daemon-reload
 ```
