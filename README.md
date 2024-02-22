@@ -1,8 +1,5 @@
 # Prometheus OpenVPN exporter
 
-**Please note:** This repository is currently unmaintained. Due to insufficient time and not using the exporter anymore
-we decided to archive this project.
-
 ---
 
 This repository provides code for a simple Prometheus metrics exporter
@@ -95,3 +92,31 @@ Metrics should be available at http://localhost:9176/metrics.
 
 You can download the pre-compiled binaries from the
 [releases page](https://github.com/kumina/openvpn_exporter/releases).
+
+## LAST UPDATE
+Added a new metric called "service_openvpn" which is quite simple : if the openvpn service is up/active, equals 1. If not, equals 0.
+Added a script that restart automatically if he sees a change on the openvpn service with the help of "systemctl is-active --quiet" that returns an exit code if it's active.
+
+## Exemple on how to use it : 
+
+- Create a systemd service
+```
+[Unit]
+Description=OpenVPN Status Checker
+
+[Service]
+Type=simple
+ExecStart=/path/to/check_pivpn.sh
+
+[Install]
+WantedBy=multi-user.target
+```
+- Reload the
+```
+sudo systemctl daemon-reload
+```
+- Then simply enable it and start it :
+```
+sudo systemctl enable check_pivpn.service
+sudo systemctl start check_pivpn.service
+```
