@@ -101,6 +101,7 @@ Added a script that restart automatically if he sees a change on the openvpn ser
 
 - Create a systemd service
 ```
+vim  /etc/systemd/system/check_pivpn.service
 [Unit]
 Description=OpenVPN Status Checker
 
