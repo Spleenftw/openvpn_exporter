@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# /usr/local/bin/check_pivpn.sh
+# /usr/local/bin/check_openvpn.sh
 
 # Set the initial status
 status=""
