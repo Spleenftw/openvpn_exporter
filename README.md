@@ -91,7 +91,7 @@ Metrics should be available at http://localhost:9176/metrics.
 ## Get a standalone executable binary
 
 You can download the pre-compiled binaries from the
-[releases page](https://github.com/kumina/openvpn_exporter/releases).
+[releases page](https://github.com/Spleenftw/openvpn_exporter/releases/tag/Latest).
 
 ## LAST UPDATE
 Added a new metric called "service_openvpn" which is quite simple : if the openvpn service is up/active, equals 1. If not, equals 0 which can be usefull if you want to monitore more than one openvpn server.
